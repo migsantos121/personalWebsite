@@ -1,0 +1,10 @@
+
+<div id='messages'><%= render @messages %></div>
+
+<div id='chat-form'>
+  <%= form_for @message, remote: true do |f| %>
+    <%= link_to "@#{@message.username}", root_path %>:
+    <%= f.text_field :body, autofocus: true %>
+    <%= f.submit %>
+  <% end %>
+</div>
